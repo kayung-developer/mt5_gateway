@@ -1,5 +1,5 @@
 services:
-  - type: windows # Specifies a Windows Native Environment
+  - type: window # Specifies a Windows Native Environment
     name: mt5-gateway
     region: frankfurt # Or your preferred region (e.g., ohio, oregon)
     plan: free # Use the free tier
