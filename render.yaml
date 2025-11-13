@@ -1,0 +1,16 @@
+services:
+  - type: win_svc # Specifies a Windows Native Environment
+    name: mt5-gateway
+    region: frankfurt # Or your preferred region (e.g., ohio, oregon)
+    plan: free # Use the free tier
+    
+    # --- Build and Start Configuration ---
+    # The command Render runs on every deploy and restart.
+    startCommand: pip install -r requirements.txt && python gateway.py
+    
+    # --- Environment Variables ---
+    # This section tells Render to create a secret named API_KEY.
+    # You will set the value in the Render dashboard UI.
+    envVars:
+      - key: API_KEY
+        sync: false # 'false' means it's a secret set in the dashboard, not from the repo.
